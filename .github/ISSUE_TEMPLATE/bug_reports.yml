@@ -1,0 +1,74 @@
+body:
+- attributes:
+    description: What modpack you having issues with?
+    label: Modpack
+    multiple: false
+    options:
+    - "Cisco's Fantasy Medieval RPG [Ultimate]"
+    - "Cisco's Fantasy Medieval RPG [Lite]"
+    - "Cisco's Fantasy Medieval RPG [Dragonfyre]"
+  id: cisco-modpack-dropdown
+  type: dropdown
+  validations:
+    required: true
+- attributes:
+    label: Modpack version
+    placeholder: ex. 1.1.0
+  id: version
+  type: input
+  validations:
+    required: true
+- attributes:
+    description: Link(s) to any log files that may help debug your issue
+    label: Log Files
+    placeholder: https://pste.ch/dotedubine
+  id: logs
+  type: textarea
+  validations:
+    required: false
+- attributes:
+    description: 'A clear and concise description of what the bug is
+
+      '
+    label: Describe the bug
+  id: bugdesc
+  type: textarea
+  validations:
+    required: true
+- attributes:
+    description: Tell us how we can reproduce the issue
+    label: Steps to reproduce
+    placeholder: '1. Go to ...
+
+      2. Click on ...
+
+      3. Scroll down to ...
+
+      4. See error
+
+      '
+  id: reproduce
+  type: textarea
+  validations:
+    required: true
+- attributes:
+    description: 'A clear and concise description of what you expected to happen if
+      this is not already clear, otherwise leave blank.
+
+      '
+    label: Expected behaviour
+  id: expectedBehaviour
+  type: input
+  validations:
+    required: false
+- attributes:
+    description: If applicable, add screenshots to help explain your problem.
+    label: Screenshots
+  id: screenshots
+  type: textarea
+  validations:
+    required: false
+description: Report an issue with the a modpack.
+labels:
+- bug
+name: Bug Report
