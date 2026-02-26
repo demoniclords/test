@@ -1,0 +1,33 @@
+name: Label issues by modpack
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add modpack label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+            const modpackLabels = {
+              "Cisco's Fantasy Medieval RPG [Ultimate]": "Cisco's Fantasy Medieval RPG [Ultimate]",
+              "Cisco's Fantasy Medieval RPG [Lite]": "Cisco's Fantasy Medieval RPG [Lite]",
+              "Cisco's Fantasy Medieval RPG [Dragonfyre]": "Cisco's Fantasy Medieval RPG [Dragonfyre]"
+            };
+
+            for (const [modpack, label] of Object.entries(modpackLabels)) {
+              if (body.includes(modpack)) {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  labels: [label]
+                });
+                break;
+              }
+            }
