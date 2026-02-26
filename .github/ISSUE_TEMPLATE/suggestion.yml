@@ -1,0 +1,38 @@
+body:
+- attributes:
+    description: What modpack is your suggestion for?
+    label: Modpack
+    multiple: false
+    options:
+    - "Cisco's Fantasy Medieval RPG [Ultimate]"
+    - "Cisco's Fantasy Medieval RPG [Lite]"
+    - "Cisco's Fantasy Medieval RPG [Dragonfyre]"
+
+  id: cisco-modpack-dropdown
+  type: dropdown
+  validations:
+    required: true
+- attributes:
+    description: A clear and concise description of what the problem is.
+    label: Is your suggestion related to a problem? Please describe.
+    placeholder: Ex. I'm always frustrated when [...]
+  id: problem
+  type: textarea
+- attributes:
+    description: Link to mod and describe why you would like to see the mod in the
+      pack?
+    label: Mod suggestion
+    placeholder: 'Link to mod:
+
+      A clear and concise description of what the mod what add and why you would like
+      it in the pack.
+
+      '
+  id: mod
+  type: textarea
+- attributes:
+    value: This template was generated with [Issue Forms Creator](https://www.issue-forms-creator.app/)
+  type: markdown
+description: Suggestion
+name: Suggestion
+title: '[Suggestion]: '
